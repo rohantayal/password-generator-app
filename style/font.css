@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "JetBrains Italic";
+    src: url(../assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf) format("TrueType");
+}
+
+@font-face {
+    font-family: "JetBrains";
+    src: url(../assets/fonts/JetBrainsMono-VariableFont_wght.ttf) format("TrueType");
+}
+
+*{
+    font-family: "JetBrains",Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}a
