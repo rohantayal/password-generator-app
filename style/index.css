@@ -17,6 +17,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 main {
@@ -43,12 +44,16 @@ main h1 {
     justify-content: space-between;
 }
 
-#password_generated p {
+#password_generated #password_text {
     margin: 0;
     display: inline-block;
     font-size: 1.5rem;
     margin-left: 1rem;
     font-weight: 800;
+    background-color: var(--container-background);
+    border: none;
+    width: 80%;
+    color: var(--almost-white);
 }
 
 #copy_icon {
@@ -74,6 +79,7 @@ form {
     color: var(--almost-white);
     font-size: 1rem;
     font-weight: 800;
+    align-self: center;
 }
 
 #range_text {
@@ -140,15 +146,10 @@ input[type=checkbox]:checked{
 }
 
 #strength_visual{
-
-}
-
-.strength_right{
-    max-height: 0;
-    overflow: hidden;
     display: flex;
-    justify-content: space-between;
-    column-gap: .5rem;
+    column-gap: 1rem;
+    overflow: hidden;
+    align-items: center;
 }
 
 .strength_text{
@@ -156,17 +157,26 @@ input[type=checkbox]:checked{
     font-weight: 800;
     margin: 0;
     align-self: center;
+    max-height: 0;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-align: right;
 }
 
-.strength_right.active{
+.strength_text.active{
     max-height: fit-content;
+}
+
+.strength_box{
+    display: flex;
+    column-gap: .5rem;
 }
 
 .boxes{
     width: 10px;
     height: 28px;
     align-self: center;
-    border: 2px solid var(--almost-white)
+    border: 2px solid var(--almost-white);
 }
 
 #generate {
@@ -194,4 +204,12 @@ button#generate img{
     height: 12px;
     width: 12px;
     align-self: center;
+}
+
+@media  (min-width: 48rem) {
+    main{
+        width: 80%;
+        max-width: 34rem;
+    }
+    
 }
