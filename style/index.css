@@ -1,5 +1,5 @@
 :root {
-    --background-gray: hwb(248 9% 87%);
+    --background-gray: 	hsl(248, 15%, 11%);
     --container-background: hsl(247, 11%, 15%);
     --pri-heading: hsl(251, 9%, 53%);
     --almost-white: hsl(252, 11%, 91%);
@@ -56,11 +56,26 @@ main h1 {
     color: var(--almost-white);
 }
 
+#password_generated p{
+    margin:0;
+    align-self: center;
+    margin-right: 1rem;
+    font-size: 1rem;
+    color: var(--neon);
+    font-weight: 800;
+}
+
 #copy_icon {
     margin-right: 1rem;
     height: 20px;
     width: 17.5px;
     align-self: center;
+    transition: filter .5s ease-out;
+}
+
+#copy_icon:hover{
+    filter: grayscale(1);
+    cursor: pointer;
 }
 
 form {
@@ -82,6 +97,9 @@ form {
     align-self: center;
 }
 
+
+
+
 #range_text {
     font-size: 1.5rem;
     color: var(--neon);
@@ -91,8 +109,47 @@ form {
 
 #character_length{
     width: 100%;
-    accent-color: var(--neon);
-    margin-bottom: 2rem;
+    height: max-content;
+    
+    appearance: none;
+    cursor:pointer;
+    border: none;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, var(--neon) 0%, var(--background-gray) 0%, var(--background-gray)100%);
+}
+
+input[type= "range"]::-webkit-slider-runnable-track{
+    height: .5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 1.75rem;
+    width: 1.75rem;
+    background-color: 	var(--almost-white);
+    border-radius: 50%;
+    margin-top: -.6rem;
+}
+
+input[type="range"]::-moz-slider-thumb{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 1.75rem;
+    width: 1.75rem;
+    background-color: 	var(--almost-white);
+    border-radius: 50%;
+    margin-top: -.6rem;
+    transition: background 0.3s;
+}
+
+input[type="range"]:hover{
+    cursor: pointer;
+}
+
+input[type="range"]:focus-visible::-webkit-slider-thumb, input[type="range"]::-webkit-slider-thumb:hover{
+    background-color: var(--background-gray);
+    border: 2px solid var(--neon);
 }
 
 .checkbox_container {
@@ -101,6 +158,7 @@ form {
     flex-direction: column;
     row-gap: 1rem;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .checkbox_text{
@@ -121,6 +179,14 @@ form {
 input[type=checkbox]{
     width: 1.25rem;
     height: 1.25rem;
+}
+
+input[type=checkbox]:hover{
+    cursor: pointer;
+}
+
+.checkbox_text:hover{
+    cursor: pointer;
 }
 
 input[type=checkbox]:checked{
@@ -152,22 +218,17 @@ input[type=checkbox]:checked{
     align-items: center;
 }
 
-.strength_text{
+#strength_text{
     color: var(--almost-white);
     font-weight: 800;
     margin: 0;
     align-self: center;
-    max-height: 0;
     overflow: hidden;
     text-transform: uppercase;
     text-align: right;
 }
 
-.strength_text.active{
-    max-height: fit-content;
-}
-
-.strength_box{
+#strength_box{
     display: flex;
     column-gap: .5rem;
 }
@@ -177,7 +238,45 @@ input[type=checkbox]:checked{
     height: 28px;
     align-self: center;
     border: 2px solid var(--almost-white);
+    background-color: var(--container-background);
+    transition: 0.3s;
 }
+
+.boxes.full{
+    animation: barAppearance 250ms linear;
+}
+
+.tooweak .boxes.full{
+    background-color: hsl(0, 91%, 63%);
+    border-color: hsl(0, 91%, 63%);
+}
+
+.weak .boxes.full{
+    background-color: hsl(13, 95%, 66%);
+    border-color: hsl(13, 95%, 66%);
+}
+
+.medium .boxes.full{
+    background-color: hsl(42, 91%, 68%);
+    border-color: hsl(42, 91%, 68%);
+}
+
+.strong .boxes.full{
+    background-color: hsl(127, 100%, 82%);
+    border-color: hsl(127, 100%, 82%);
+}
+
+@keyframes barAppearance {
+    0%{
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
 
 #generate {
     width: 100%;
@@ -188,12 +287,14 @@ input[type=checkbox]:checked{
     display: flex;
     justify-content: center;
     column-gap: 1rem;
+    transition: all 150ms ease-in;
 }
 
 #generate:hover{
     background-color: var(--container-background);
     color: var(--neon);
     border: .25px solid var(--neon);
+    cursor: pointer;
 }
 
 #generate:hover img{
@@ -204,6 +305,12 @@ button#generate img{
     height: 12px;
     width: 12px;
     align-self: center;
+}
+
+#error-message{
+    color: red;
+    font-size: .8rem;
+    text-align: center;
 }
 
 @media  (min-width: 48rem) {

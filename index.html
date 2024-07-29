@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./style/index.css">
   <link rel="stylesheet" href="./style/font.css">
-  <script src="./index.js"></script>
+  <script src="./indexx.js"></script>
   <title>Frontend Mentor | Password generator app</title>
 </head>
 
@@ -17,37 +17,38 @@
 
     <h1>Password Generator</h1>
     <div id="password_generated">
-      <input type="text" placeholder="P4$5W0rD!" id="password_text" readonly>
+      <input type="text" placeholder="P4$5W0rD!" id="password_text" readonly value="">
+      <p id="copyText"></p>
       <img src="./assets/images/icon-copy.svg" alt="copy password" id="copy_icon">
     </div>
 
 
-    <form action="#">
+    <form action="#" id="settings">
       <div id="character_length_top">
         <label for="character_length" class="character_length">Character Length</label>
-        <p id="range_text">10</p>
+        <p id="range_text">0</p>
       </div>
       <input type="range" name="character_length" id="character_length" min="0" max="20" value="0">
 
       <div class="checkbox_container">
 
         <div class="checkbox_sub_container">
-          <input type="checkbox" name="uppercase_letters" id="uppercase_letters">
+          <input type="checkbox" name="uppercase_letters" id="uppercase_letters" class="checkboxx">
           <label for="uppercase_letters" class="checkbox_text">Include Uppercase Letters</label>
         </div>
 
         <div class="checkbox_sub_container">
-          <input type="checkbox" name="lowercase_letters" id="lowercase_letters">
+          <input type="checkbox" name="lowercase_letters" id="lowercase_letters" class="checkboxx">
           <label for="lowercase_letters" class="checkbox_text">Include Lowercase Letters</label>
         </div>
 
         <div class="checkbox_sub_container">
-          <input type="checkbox" name="numbers" id="numbers">
+          <input type="checkbox" name="numbers" id="numbers" class="checkboxx">
           <label for="numbers" class="checkbox_text">Include Numbers</label>
         </div>
 
         <div class="checkbox_sub_container">
-          <input type="checkbox" name="symbols" id="symbols">
+          <input type="checkbox" name="symbols" id="symbols" class="checkboxx">
           <label for="symbols" class="checkbox_text">Include Symbols</label>
         </div>
 
@@ -56,26 +57,22 @@
       <div id="strength_container">
         <p id="header_strength">Strength</p>
         <div id="strength_visual">
-          <div class="">
-            <p class="strength_text active">Too weak!</p>
-            <p class="strength_text">Weak</p>
-            <p class="strength_text">Medium</p>
-            <p class="strength_text">Strong</p>
-          </div>
-          <div class="strength_box">
+          <p id="strength_text"></p>
+          <div id="strength_box">
             <div class="boxes"></div>
             <div class="boxes"></div>
             <div class="boxes"></div>
             <div class="boxes"></div>
           </div>
         </div>
-          
+
       </div>
 
-      <button id="generate">
+      <button type="submit" id="generate">
         <p>Generate</p>
         <img src="./assets/images/icon-arrow-right.svg" alt="arrow-icon">
       </button>
+      <p id="error-message"></p>
 
     </form>
 
