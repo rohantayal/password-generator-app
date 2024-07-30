@@ -1,11 +1,11 @@
 @font-face {
     font-family: "JetBrains Italic";
-    src: url(../assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf) format("TrueType");
+    src: url(../assets/images/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf) format("TrueType");
 }
 
 @font-face {
     font-family: "JetBrains";
-    src: url(../assets/fonts/JetBrainsMono-VariableFont_wght.ttf) format("TrueType");
+    src: url(../assets/images/fonts/JetBrainsMono-VariableFont_wght.ttf) format("TrueType");
 }
 
 *{
